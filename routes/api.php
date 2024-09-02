@@ -8,4 +8,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/calculate-route-price', [TransportController::class, 'calculateRoutePrice']);
+Route::post('/calculate', TransportController::class)->middleware('basic.auth');

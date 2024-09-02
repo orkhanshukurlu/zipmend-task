@@ -7,7 +7,7 @@ use Illuminate\Http\JsonResponse;
 
 class TransportController extends Controller
 {
-    public function calculateRoutePrice(CalculateRoutePriceRequest $request): JsonResponse
+    public function __invoke(CalculateRoutePriceRequest $request): JsonResponse
     {
         return response()->json();
     }
