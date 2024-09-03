@@ -22,22 +22,22 @@ class GoogleDirectionService
         return $distance;
     }
 
-    protected function getOrigin(string $origin): string
+    private function getOrigin(string $origin): string
     {
         return str_replace(' ', '+', $origin);
     }
 
-    protected function getDestination(string $destination): string
+    private function getDestination(string $destination): string
     {
         return str_replace(' ', '+', $destination);
     }
 
-    protected function getKey(): string
+    private function getKey(): string
     {
         return config('google.api_key');
     }
 
-    protected function getResponse(string $origin, string $destination): array
+    private function getResponse(string $origin, string $destination): array
     {
         $response = Http::get('https://maps.googleapis.com/maps/api/directions/json', [
             'origin' => $this->getOrigin($origin),

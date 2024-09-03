@@ -18,7 +18,7 @@ class BasicAuthMiddleware
         return $next($request);
     }
 
-    protected function isAuthenticated(Request $request): bool
+    private function isAuthenticated(Request $request): bool
     {
         return $request->hasHeader('Authorization')
             && str_starts_with($request->header('Authorization'), 'Basic ')

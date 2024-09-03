@@ -15,7 +15,7 @@ class AddressExistsRule implements ValidationRule
         }
     }
 
-    protected function exists(array $value): bool
+    private function exists(array $value): bool
     {
         return City::query()
             ->where('country', $value['country'])
