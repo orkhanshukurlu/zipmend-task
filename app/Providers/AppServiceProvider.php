@@ -2,21 +2,20 @@
 
 namespace App\Providers;
 
+use App\Interfaces\GoogleDirectionServiceInterface;
+use App\Interfaces\TransportServiceInterface;
+use App\Services\GoogleDirectionService;
+use App\Services\TransportService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
-        //
+        $this->app->bind(GoogleDirectionServiceInterface::class, GoogleDirectionService::class);
+        $this->app->bind(TransportServiceInterface::class, TransportService::class);
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
         //

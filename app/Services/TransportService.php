@@ -2,12 +2,14 @@
 
 namespace App\Services;
 
+use App\Interfaces\GoogleDirectionServiceInterface;
+use App\Interfaces\TransportServiceInterface;
 use App\Models\VehicleType;
 
-class TransportService
+class TransportService implements TransportServiceInterface
 {
     public function __construct(
-        private readonly GoogleDirectionService $googleDirectionService,
+        private readonly GoogleDirectionServiceInterface $googleDirectionService,
         private array $response = [],
         private int $totalDistance = 0
     ) {

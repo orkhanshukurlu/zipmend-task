@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CalculateRoutePriceRequest;
-use App\Services\TransportService;
+use App\Interfaces\TransportServiceInterface;
 use Illuminate\Http\JsonResponse;
 
 class TransportController extends Controller
 {
     public function __construct(
-        private readonly TransportService $transportService
+        private readonly TransportServiceInterface $transportService
     ) {
     }
 

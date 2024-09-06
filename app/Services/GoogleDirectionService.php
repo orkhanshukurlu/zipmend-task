@@ -3,9 +3,10 @@
 namespace App\Services;
 
 use App\Exceptions\GoogleDirectionAPIException;
+use App\Interfaces\GoogleDirectionServiceInterface;
 use Illuminate\Support\Facades\Http;
 
-class GoogleDirectionService
+class GoogleDirectionService implements GoogleDirectionServiceInterface
 {
     public function getDistance(string $origin, string $destination): int
     {
